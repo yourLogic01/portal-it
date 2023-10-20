@@ -1,0 +1,47 @@
+.loginBorder {
+    border: 1px solid;
+    border-radius: 6px;
+}
+.form-signin .form-floating:focus-within {
+    z-index: 2;
+}
+
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.form-registration input {
+    border-radius: 0;
+    margin-bottom: -1px;
+}
+
+/* button post home */
+.btn-post {
+    color: white;
+    background-color: #176b87;
+}
+.btn-post:hover {
+    color: white;
+    background-color: #145064;
+}
+.btn-post:active {
+    color: white;
+    background-color: #145064;
+}
+.navbar {
+    background-color: #176b87;
+}
+.btn-search {
+    background-color: #176b87;
+}
+.btn-search:hover {
+    background-color: #145064;
+}
