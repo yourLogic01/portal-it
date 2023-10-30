@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminCategoryController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\DashboardPostController;
 use App\Http\Controllers\DashboardUserController;
 
@@ -62,6 +63,9 @@ Route::get('/checkSlug', [HomeController::class, 'checkSlug']);
 // creeate post in home
 Route::post('/', [HomeController::class, 'store'])->middleware('auth');
 
+//route add comment
+Route::post('/detail/{slug}/comment', [CommentController::class, 'store'])->middleware('auth');
+
 //route post detail
-Route::get('/{post:slug}', [HomeController::class, 'show']);
+Route::get('/detail/{post:slug}', [HomeController::class, 'show']);
 

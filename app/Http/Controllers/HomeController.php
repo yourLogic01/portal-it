@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Comment;
 use App\Models\Post;
 use App\Models\User;
 use Cviebrock\EloquentSluggable\Services\SlugService;
@@ -30,13 +31,14 @@ class HomeController extends Controller
             
         ]);
     }
-    public function show(Post $post) {
+    public function show(Post $post,Comment $comment) {
         $postId = Post::find($post->id);
         $postId->increment('count');
         return view('post', [
             "title" => "detail post",
             "active" => 'post',
-            "post" => $post
+            "post" => $post,
+            "comments" => $comment->where('post_id', $post->id)->latest()->get(),
         ]);
     }
     public function store(Request $request)

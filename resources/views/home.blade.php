@@ -90,7 +90,7 @@
         <div class="card mb-3">
             
             <div class="card-body text-center">
-            <h3 class="card-title"><a class="text-decoration-none text-dark" href="/{{ $posts[0]->slug }}">{{ $posts[0]->title }}</a></h3>
+            <h3 class="card-title"><a class="text-decoration-none text-dark" href="/detail/{{ $posts[0]->slug }}">{{ $posts[0]->title }}</a></h3>
             <p>
                 <small class="text-body-secondary">
                     By. <a class="text-decoration-none" href="/?author={{ $posts[0]->author->username }}">{{ $posts[0]->author->name }}</a> in <a class="text-decoration-none" href="/?category={{ $posts[0]->category->slug }}">{{ $posts[0]->category->name }}</a> {{ $posts[0]->created_at->diffForHumans() }} <i class="bi bi-eye"></i> {{ $posts[0]->count }} views
@@ -98,7 +98,7 @@
             </p>
             <p class="card-text">{{ $posts[0]->excerpt }}</p>
 
-            <a class="text-decoration-none btn btn-primary" href="/{{ $posts[0]->slug }}">Read more</a>
+            <a class="text-decoration-none btn btn-primary" href="/detail/{{ $posts[0]->slug }}">Read more</a>
             </div>
         </div>
     
@@ -110,14 +110,14 @@
                     <div class="card">
                         <div class=" mt-4 px-3 py-2 " style="background-color: rgba(0,0,0,0.7);max-width :60%"><a href="/?category={{ $post->category->slug }}" class="text-white text-decoration-none">{{ $post->category->name }}</a></div>
                         <div class="card-body">
-                        <h5 class="card-title"><a class="text-decoration-none text-dark" href="/{{ $post->slug }}">{{ $post->title }}</a></h5>
+                        <h5 class="card-title"><a class="text-decoration-none text-dark" href="/detail/{{ $post->slug }}">{{ $post->title }}</a></h5>
                         <p>
                             <small class="text-body-secondary">
                                 By. <a class="text-decoration-none" href="/?author={{ $post->author->username }}">{{ $post->author->name }}</a> {{ $post->created_at->diffForHumans() }} <i class="bi bi-eye"></i> {{ $post->count }} views
                             </small>
                         </p>
                         <p class="card-text">{{ $post->excerpt }}</p>
-                        <a href="/{{ $post->slug }}" class="btn btn-primary">Read more</a>
+                        <a href="/detail/{{ $post->slug }}" class="btn btn-primary">Read more</a>
                         </div>
                     </div>
                 </div>
