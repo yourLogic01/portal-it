@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Models\Category;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Support\Facades\Storage;
@@ -54,13 +55,14 @@ class DashboardPostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Post $post)
+    public function show(Post $post, Comment $comment)
     {
         if($post->author->id !== auth()->user()->id) {
             abort(403);
         }
         return view('dashboard.posts.show', [
-            'post' => $post
+            'post' => $post,
+            'comments' => $comment->where('post_id', $post->id)->get()
         ]);
     }
 

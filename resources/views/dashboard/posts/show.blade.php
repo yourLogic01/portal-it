@@ -20,6 +20,30 @@
             <article class="my-3 fs-5">
                 {!! $post->body !!}
             </article>
+            <div class="card">
+                <div class="card-body">
+                    <h3>Comments</h3>
+                    <hr>
+                    @foreach ($comments as $comment)
+                        @if($comment)
+
+                        <div class="card mb-2">
+                            <div class="card-body">
+                            <h6 class="card-title">{{ $comment->author->name }}</h6>
+                            <p class="card-text">{{ $comment->body }}</p>
+                            </div>
+                        </div>
+                            
+                        @else
+                            <p class="text-center fs-4">This post doesnt have comment.</p>
+                        @endif
+                        
+                    @endforeach
+                      
+                </div>
+              </div>
+            
+            
         </div>
     </div>
 </div>
