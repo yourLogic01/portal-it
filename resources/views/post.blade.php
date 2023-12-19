@@ -38,21 +38,16 @@
                             <button type="submit" class="btn btn-primary">Add Comment</button>
                         </form>
                         <hr>
-                        @foreach ($comments as $comment)
-                            @if($comment)
-
+                        @forelse ($comments as $comment)
                             <div class="card mb-2">
                                 <div class="card-body">
                                 <h6 class="card-title">{{ $comment->author->name }}</h6>
                                 <p class="card-text">{{ $comment->body }}</p>
                                 </div>
                             </div>
-                                
-                            @else
-                                <p class="text-center fs-4">This post doesnt have comment.</p>
-                            @endif
-                            
-                        @endforeach
+                        @empty
+                            <p class="text-center fs-4">This post doesnt have comment.</p>
+                        @endforelse
                           
                     </div>
                   </div>
